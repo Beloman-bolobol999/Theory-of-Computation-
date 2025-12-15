@@ -1,0 +1,120 @@
+# Turing Machine Simulator
+
+A Python-based graphical Turing Machine simulator that validates binary strings based on specific acceptance criteria for ones and zeros.
+
+## Features
+
+- **Interactive GUI**: Built with Tkinter for an intuitive user experience
+- **Multiple Validation Modes**: Four different string acceptance patterns
+- **Visual Feedback**: Color-coded pages and clear result messages
+- **Easy Navigation**: Simple restart and exit functionality
+
+## Prerequisites
+
+- Python 3.x
+- Tkinter (usually comes pre-installed with Python)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Beloman-bolobol999/turing-machine-simulator.git
+cd turing-machine-simulator
+```
+
+2. Run the application:
+```bash
+python turing_machine_simulator.py
+```
+
+## Usage
+
+1. **Launch the Application**: Run the Python script to open the welcome page
+2. **Select a Validation Mode**: Choose from four options:
+   - Odd ones and even zeros
+   - Even ones and odd zeros
+   - Even ones and even zeros
+   - Odd ones and odd zeros
+3. **Enter Binary String**: Input a string containing only '0' and '1' characters
+4. **Check Result**: Click the "Check" button to validate your string
+5. **Restart or Exit**: Use the provided buttons to restart or exit the application
+
+## Validation Rules
+
+### Option 1: Odd Ones and Even Zeros
+Accepts strings with an odd count of '1's and an even count of '0's.
+
+**Examples:**
+- `1` ✓ (1 one, 0 zeros)
+- `100` ✓ (1 one, 2 zeros)
+- `11` ✗ (2 ones, 0 zeros)
+
+### Option 2: Even Ones and Odd Zeros
+Accepts strings with an even count of '1's and an odd count of '0's.
+
+**Examples:**
+- `0` ✓ (0 ones, 1 zero)
+- `110` ✓ (2 ones, 1 zero)
+- `11` ✗ (2 ones, 0 zeros)
+
+### Option 3: Even Ones and Even Zeros
+Accepts strings with an even count of '1's and an even count of '0's.
+
+**Examples:**
+- `11` ✓ (2 ones, 0 zeros)
+- `1100` ✓ (2 ones, 2 zeros)
+- `1` ✗ (1 one, 0 zeros)
+
+### Option 4: Odd Ones and Odd Zeros
+Accepts strings with an odd count of '1's and an odd count of '0's.
+
+**Examples:**
+- `10` ✓ (1 one, 1 zero)
+- `11100` ✓ (3 ones, 2 zeros) - Note: This should be ✗
+- `1110` ✓ (3 ones, 1 zero)
+
+## Technical Details
+
+The simulator implements finite state machines (FSM) to validate input strings. Each validation mode uses a different state transition table with 4 states (0-3) to track the parity of ones and zeros as the string is processed character by character.
+
+### State Machine Logic
+
+- **State 0**: Starting state (even ones, even zeros)
+- **State 1**: State transitions based on current counts
+- **State 2**: State transitions based on current counts
+- **State 3**: Final accepting state (varies by mode)
+
+## Project Structure
+
+```
+turing-machine-simulator/
+│
+├── turing_machine_simulator.py    # Main application file
+└── README.md                        # This file
+```
+
+## Contributors
+
+- **Belal Ashraf** 
+- **Omar Hossam**
+- **Mohamed Ezzat**
+
+## License
+
+This project is open source and available for educational purposes.
+
+## Acknowledgments
+
+This simulator was developed as an educational tool to demonstrate the principles of Turing machines and finite state automata in a visual and interactive manner.
+
+## Future Enhancements
+
+- Add visualization of state transitions
+- Support for more complex patterns
+- Step-by-step execution mode
+- Save and load string test cases
+- Export validation results
+
+## Contact
+
+For questions or contributions, please visit the [GitHub repository](https://github.com/Beloman-bolobol999).
